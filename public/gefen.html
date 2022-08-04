@@ -1,27 +1,26 @@
 <body onload="showgefen()">
 
 	<div id="body">
-	 <center>
-		<h2>Gdud Gefen</h2>
-	 <div id="gefen">
-	 </div>
-	 </center>
-	 <button class="newTask" id="open-button_Task" onclick="openFormGefen()"> Add a new task </button>
+		<center>
+			<h2>Gdud Gefen</h2>
+			<div id="gefen"></div>
+		</center>
+	<button class="newTask" id="open-button_Task" onclick="openFormGefen()"> Add a new task </button>
 
 	<div class="form-popup" id="myFormGefen">
 
-		 <form action="/NewGefenTask" class="form-container">
-		   <h1> Add a new task </h1>
+		<form action="/NewGefenTask" class="form-container">
+		<h1> Add a new task </h1>
 	   
-		   <label for="name"><b> The name of the task </b></label>
-		   <input type="text" placeholder="Enter task" name="name" required>
+		<label for="name"><b> The name of the task </b></label>
+		<input type="text" placeholder="Enter task" name="name" required>
 	   
-		   <label for="date"><b> Date</b></label>
-		   <input type="date" placeholder="Enter Date" name="date" required>
+		<label for="date"><b> Date</b></label>
+		<input type="date" placeholder="Enter Date" name="date" required>
 	   
-		   <button type="submit" class="btn" onclick="addTaskGefen()"> Add</button>
-		   <button type="button" class="btn cancel" onclick="closeFormGefen()">Close</button>
-		 </form>
-	   </div>
+		<button type="submit" class="btn" onclick="addTaskGefen()"> Add</button>
+		<button type="button" class="btn cancel" onclick="closeFormGefen()">Close</button>
+		</form>
+	</div>
 	</div>
 </body>
