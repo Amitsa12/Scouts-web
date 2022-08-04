@@ -4,6 +4,8 @@ function fetchPage(whatPage) {
         .then(data => document.getElementById("mainContent").innerHTML = data);
 }
 
+///// TASKS
+
 function showtamar() { //create table for gdud tamar task
     fetch("/getTamarTask")
       .then((response) => response.text())
@@ -42,6 +44,8 @@ function showtamar() { //create table for gdud tamar task
   function closeFormTamar() {
     document.getElementById("myFormTamar").style.display = "none";
   }
+
+
 
   function showshaked() { //create table for gdud shaked task
     fetch("/getShakedTask")
@@ -82,6 +86,8 @@ function showtamar() { //create table for gdud tamar task
     document.getElementById("myFormShaked").style.display = "none";
   }
 
+
+
 function showgefen() { //create table for gdud gefen task
   fetch("/getGefenTask")
     .then((response) => response.text())
@@ -121,6 +127,11 @@ function closeFormGefen() {
   document.getElementById("myFormGefen").style.display = "none";
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///// USERS
+
 function showTamarusers() { //create table tamar
   fetch("/getTamarUsers")
     .then((response) => response.text())
@@ -155,7 +166,6 @@ function showTamarusers() { //create table tamar
     });
 }
 
-////////////////////////////////////////////////
 
 function showShakedusers() { //create table shaked
   fetch("/getShakedUsers")
@@ -192,7 +202,6 @@ function showShakedusers() { //create table shaked
     });
 }
 
-//////////////////////////////
 
 function showGefenusers() { //create table gefen
   fetch("/getGefenUsers")

@@ -36,8 +36,8 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   }
   exports.saveCamperGefen = saveCamperGefen;
 
-  ///////////////////////////////////////////////////
-  async function saveUser(details){ // save new user to mongo
+
+  async function saveUser(details){ // save new general user to mongo
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     var col = client.db("tribe").collection("users");
@@ -47,7 +47,10 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   }
   exports.saveUser = saveUser;
 
-  async function getTamarTask(){  //
+
+  ///// get new camper
+
+  async function getTamarTask(){  //pull from the mongo the tasks in gdud tamar
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     const db = client.db("tribe");
@@ -58,7 +61,7 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   }
   exports.getTamarTask = getTamarTask;
 
-  async function getShakedTask(){  //
+  async function getShakedTask(){  //pull from the mongo the tasks in gdud shaked
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     const db = client.db("tribe");
@@ -69,7 +72,7 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   }
   exports.getShakedTask=getShakedTask;
 
-  async function getGefenTask(){  //
+  async function getGefenTask(){  //pull from the mongo the tasks in gdud gefen
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     const db = client.db("tribe");
@@ -115,7 +118,7 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
 
 
   ///// Delete task
-  async function deleteTaskTamar(details){ // delete task from mongo- gdud tamar
+  async function deleteTaskTamar(details){ // get a  task required to delete from mongo- gdud tamar and return it 
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     var dbo = client.db("tribe");
@@ -127,7 +130,7 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   };
   exports.deleteTaskTamar = deleteTaskTamar;
 
-  async function deleteTaskShaked(details){ // delete task from mongo- gdud shaked
+  async function deleteTaskShaked(details){ //  get a  task required to delete from mongo- gdud shaked and return it 
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     var dbo = client.db("tribe");
@@ -139,7 +142,7 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   };
   exports.deleteTaskShaked = deleteTaskShaked;
 
-  async function deleteTaskGefen(details){ // delete task from mongo- gdud gefen
+  async function deleteTaskGefen(details){ //  get a  task required to delete from mongo- gdud gefen and return it 
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
     var dbo = client.db("tribe");
@@ -175,7 +178,6 @@ async function saveCamperTamar(details){ // save new camper to mongo- gdud tamar
   };
   exports.deleteUsers = deleteUsers;
 
-///////////////////////////////////////////////////////////////////////
 
 async function getShakedUsers(){  // get shaked users
   var client = new MongoClient(uri, {useUnifiedTopology: true});
@@ -189,19 +191,6 @@ async function getShakedUsers(){  // get shaked users
 };
 exports.getShakedUsers = getShakedUsers;
 
-// async function deleteShakedUsers(details){  //delete shaked users 
-//   var client = new MongoClient(uri, {useUnifiedTopology: true});
-//   await client.connect();
-//   var dbo = client.db("tribe");
-//   var myquery = { ID: details };
-//   let collection= dbo.collection('users');
-//   let res=await collection.deleteOne(myquery);
-//   client.close();
-//   return res;
-// };
-// exports.deleteShakedUsers = deleteShakedUsers;
-
-///////////////////////////////////////////////////////////////////////
 
 async function getGefenUsers(){  // get gefen users
   var client = new MongoClient(uri, {useUnifiedTopology: true});
@@ -214,19 +203,6 @@ async function getGefenUsers(){  // get gefen users
   return res;
 };
 exports.getGefenUsers = getGefenUsers;
-
-// async function deleteGefenUsers(details){  //delete gefen users 
-//   var client = new MongoClient(uri, {useUnifiedTopology: true});
-//   await client.connect();
-//   var dbo = client.db("tribe");
-//   var myquery = { ID: details };
-//   let collection= dbo.collection('users');
-//   let res=await collection.deleteOne(myquery);
-//   client.close();
-//   return res;
-// };
-// exports.deleteGefenUsers = deleteGefenUsers;
-
 
 async function getManager(){  // get manager users
   var client = new MongoClient(uri, {useUnifiedTopology: true});
@@ -250,20 +226,8 @@ async function SaveManager(details){  // save new manager to mongo
 }
 exports.SaveManager = SaveManager;
 
-// async function deleteManager(details){  //delete manager users 
-//   var client = new MongoClient(uri, {useUnifiedTopology: true});
-//   await client.connect();
-//   var dbo = client.db("tribe");
-//   var myquery = { ID: details };
-//   let collection= dbo.collection('users');
-//   let res=await collection.deleteOne(myquery);
-//   client.close();
-//   return res;
-// };
-// exports.deleteManager = deleteManager;
 
-
-async function loginUser(details){ // Verify login 
+async function loginUser(details){ // Verify login by the unique ID
   var client = new MongoClient(uri, {useUnifiedTopology: true});
   await client.connect();
   var query = { ID: String(details.ID), password: String (details.password) };

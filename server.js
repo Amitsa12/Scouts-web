@@ -59,10 +59,7 @@ app.get('/getGefenMember', (req, res) => { // get new gefen
 
 })
 
-app.get('/getResult', (req, res) => {
-  res.send('Hello World!')
-})
-//////////////////////////////////////////////////////////////////////////
+
 app.get('/getuser', (req, res) => { // get new user
   var newUser =
   {
@@ -188,7 +185,6 @@ app.get("/deleteUsers", (req, res) => { //delete tamar users
   getclose(Delete);
 })
 
-//////////////////////////////
 
 app.get("/getShakedUsers", (req, res) => { // get shaked users
   async function getData() {
@@ -234,20 +230,17 @@ app.get("/login",async(req,res)=>{ // Verify login by id
             res.redirect('indexadmin.html');
           }
           else {
-            res.redirect('indexcamper.html?#');
+            res.redirect('indexcamper.html');
           }
         }
         }
       }
     })};
-
-
   await myUser(User);
  console.log(User)
 });
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-app.get('/NewManager', (req, res) => { // save new Manager
+app.get('/NewManager', (req, res) => { // save new admin
   var newManager =
   {
     name: req.query.name,
@@ -267,3 +260,6 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}`)
 })
 
+app.get('/getResult', (req, res) => {
+  res.send('Hello World!')
+})
