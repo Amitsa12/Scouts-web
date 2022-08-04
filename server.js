@@ -12,7 +12,6 @@ app.get('/getTamarMember', (req, res) => { // get new tamar
       ID: req.query.ID,
       gdud:"tamar",
       phone: req.query.phone,
-      user: req.query.user,
       password: req.query.password,
       type: "camper"
     }
@@ -30,7 +29,6 @@ app.get('/getShakedMember', (req, res) => { // get new shaked
     gdud: "shaked",
     ID: req.query.ID,
     phone: req.query.phone,
-    user: req.query.user,
     password: req.query.password,
     type: "camper"
   }
@@ -48,7 +46,6 @@ app.get('/getGefenMember', (req, res) => { // get new gefen
     gdud: "gefen",
     ID: req.query.ID,
     phone: req.query.phone,
-    user: req.query.user,
     password: req.query.password,
     type: "camper"
   }
@@ -68,7 +65,6 @@ app.get('/getuser', (req, res) => { // get new user
     gdud: req.query.gdud,
     ID: req.query.ID,
     phone: req.query.phone,
-    user: req.query.user,
     password: req.query.password,
   }
   async function mysave(details) {
@@ -148,6 +144,7 @@ app.get("/getTamarTask", (req, res) => { //
     getclose(Delete);
   })
 
+
 app.get("/deleteShaked", (req, res) => { //delete task shaked
 
   var Delete = req.query.name
@@ -157,6 +154,7 @@ app.get("/deleteShaked", (req, res) => { //delete task shaked
   }
   getclose(Delete);
 })
+
 
 app.get("/deleteGefen", (req, res) => { //delete task gefen
 
@@ -168,12 +166,14 @@ app.get("/deleteGefen", (req, res) => { //delete task gefen
   getclose(Delete);
 })
 
+
 app.get("/getTamarUsers", (req, res) => { // get tamar users
   async function getData() {
     await mydb.getTamarUsers().then((result) => res.send(result));
   }
   getData();
 });
+
 
 app.get("/deleteUsers", (req, res) => { //delete tamar users
 
@@ -220,7 +220,7 @@ app.get("/login",async(req,res)=>{ // Verify login by id
     await mydb.loginUser(details).then((result)=>{
       console.log("result:" , result);
       if (result == null){
-        res.redirect('index.html')
+        res.redirect('index.html');
       }
       else {
         for (const [key, value] of Object.entries(result)) {
@@ -246,7 +246,6 @@ app.get('/NewManager', (req, res) => { // save new admin
     name: req.query.name,
     ID: req.query.ID,
     phone: req.query.phone,
-    user: req.query.user,
     password: req.query.password,
     type: "admin"
   }
