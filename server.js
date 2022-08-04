@@ -197,17 +197,6 @@ app.get("/getShakedUsers", (req, res) => { // get shaked users
   getData();
 });
 
-// app.get("/deleteShakedUsers", (req, res) => { //delete shaked users
-
-//   var Delete = req.query.name
-
-//   async function getclose(details) {
-//     await mydb.deleteShakedUsers(details).then((result) => res.redirect('indexadmin.html'));
-//   }
-//   getclose(Delete);
-// })
-
-//////////////////////////////////////
 
 app.get("/getGefenUsers", (req, res) => { // get sgefen users
   async function getData() {
@@ -216,15 +205,6 @@ app.get("/getGefenUsers", (req, res) => { // get sgefen users
   getData();
 });
 
-// app.get("/deleteGefenUsers", (req, res) => { //delete gefen users
-
-//   var Delete = req.query.name
-
-//   async function getclose(details) {
-//     await mydb.deleteGefenUsers(details).then((result) => res.redirect('indexadmin.html'));
-//   }
-//   getclose(Delete);
-// })
 
 app.get("/getManager", (req, res) => { // get managers users
   async function getData() {
@@ -233,15 +213,6 @@ app.get("/getManager", (req, res) => { // get managers users
   getData();
 });
 
-// app.get("/deleteManager", (req, res) => { //delete managers users
-
-//   var Delete = req.query.name
-
-//   async function getclose(details) {
-//     await mydb.deleteManager(details).then((result) => res.redirect('indexadmin.html'));
-//   }
-//   getclose(Delete);
-// })
 
 app.get("/login",async(req,res)=>{ // Verify login by id
   var User =
@@ -274,24 +245,6 @@ app.get("/login",async(req,res)=>{ // Verify login by id
   await myUser(User);
  console.log(User)
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 app.get('/NewManager', (req, res) => { // save new Manager
