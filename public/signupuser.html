@@ -1,0 +1,45 @@
+<div id="body">
+	<h2 dir='rtl'>דף הרשמה לצוות</h2>
+		<form action="/getUser">
+			<center><h3>  Fill in the details to enter your gdud </h3></center>
+			<h3> Full Name </h3>
+			<label for="name">
+				<input type="text" id="name" name="name">
+			</label>
+			<h3> ID </h3>
+			<label for="ID">
+				<input type="text" id="ID" name="ID">
+			</label>
+			<h3> Phone </h3>
+			<label for="phone">
+				<input type="text" id="phone" name="phone">
+			</label>
+            <h3>Type of User</h3>
+            <label for="subject">
+                <select name="type" id="type">
+                    <option value="">--Please choose an option--</option>
+                    <option value="admin">admin</option>
+                    <option value="camper">camper</option>
+                </select>	
+            </label>
+            <h3>Gdud</h3>
+			<label for="subject">
+				<select name="gdud" id="gdud">
+					<option value="">--Please choose an option--</option>
+					<option value="tamar">Tamar</option>
+					<option value="shaked">Shaked</option>
+					<option value="gefen">Gefen</option>
+				</select>	
+			</label>
+        </label>
+		<h3>UserName</h3>
+			<label for="username">
+				<input type="text" id="user" name="user">
+			</label>
+			<h3>Password</h3>
+			<label for="password">
+				<input type="password" id="phone" name="password">
+			</label>
+			<input type="submit" id="send" value="Send" onclick="saveUser()">
+		</form>
+	</div>

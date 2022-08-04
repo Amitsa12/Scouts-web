@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="user-scalable=0, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Noa & Amit Scouts Tribe </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="./js/index.js"></script>
+    <script src="js/adminindex.js"></script>
+</head>
+
+<body onload="fetchPage('homePage.html')">
+    <div id="header">
+        <h1><a href="indexadmin.html"><img src="images/logo-black-scouts.png" alt="scouts-logo" class="figure"> </span></a></h1>
+        <ul id="navigation">
+            <li >
+                <a href="#" onclick="fetchPage('homePage.html')">Home</a>
+            </li>
+            <li>
+                <a>To Do</a>
+                <ul id="navigation">
+                    <li>
+                        <a  href="#" onclick="fetchPage('tamar.html'),showtamar()"> Tamar </a>
+                    </li>
+                    <li>
+                        <a  href="#" onclick="fetchPage('shaked.html'),showshaked()"> Shaked </a>
+                    </li>
+                    <li>
+                        <a  href="#" onclick="fetchPage('gefen.html'),showgefen()"> Gefen </a>
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <a>Manage</a>
+                <ul id="navigation">
+                    <li>
+                        <a href="#"  onclick="fetchPage('manageuser.html')">Users</a>
+                    </li>
+                    <li>
+                        <a  href="#" onclick="fetchPage('manageadmin.html'),showmanager()"> Admins </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="fetchPage('signupuser.html')">Add user</a>
+            </li>
+            <li>
+                <a href="index.html">log out</a>
+            </li>
+        </ul>
+    </div>
+    <div id="mainContent" class="home">
+    </div>
+
+    <div id="footer">
+        <div>
+            <span>Rishon Le Zion | Israel</span>
+            <p>
+                &copy; 2022 by Noa & Amit Scouts Tribe. All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

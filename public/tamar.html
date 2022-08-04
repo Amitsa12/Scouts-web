@@ -1,0 +1,27 @@
+<body onload="showtamar()">
+
+     <div id="body">
+      <center>
+       <h2>Gdud Tamar</h2>
+      <div id="tamar">
+      </div>
+      </center>
+      <button class="newTask" id="open-button_Task" onclick="openFormTamar()"> Add a new task </button>
+
+     <div class="form-popup" id="myFormTamar">
+
+          <form action="/NewTamarTask" class="form-container">
+            <h1> Add a new task </h1>
+        
+            <label for="name"><b> The name of the task </b></label>
+            <input type="text" placeholder="Enter task" name="name" required>
+        
+            <label for="date"><b> Date</b></label>
+            <input type="date" placeholder="Enter Date" name="date" required>
+        
+            <button type="submit" class="btn" onclick="addTaskTamar()">Add</button>
+            <button type="button" class="btn cancel" onclick="closeFormTamar()">Close</button>
+          </form>
+        </div>
+     </div>
+</body>
